@@ -1,0 +1,44 @@
+{% load static %}
+<div class="row">
+  <div class="col">
+    <div class="col-md">
+      <div class="card text-center bg-success text-white mb-3">
+        <div class="card-header">
+          <h5 class="card-title" style="color:white">Hello..<i style="color:red">{{user.username}},</i></h5>
+        </div>
+        <div class="card-body">
+          <a class="btn btn-outline-danger  btn-sm btn-block" style="color:white" href="{% url 'doctor_account' %}">Update Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col">
+    <div class="col-md">
+      <div class="card text-center bg-danger text-white mb-3">
+        <div class="card-header">
+          <h5 class="card-title" style="color:white">Total Appointments</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{total_appointment}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="col-md">
+      <div class="card text-center bg-info text-white mb-3">
+        <div class="card-header">
+          <h5 class="card-title" style="color:white">My Profile</h5>
+        </div>
+        <div class="card-body">
+          <img class="profile-pic" src="{{request.user.doctor.profile_pic.url}}" width="100px" height="80px"><br><br>
+          <h5 class="card-title"><i>{{user.email}}</i></h5>
+          <h5 class="card-title"><i>{{request.user.doctor.contact}}</i></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

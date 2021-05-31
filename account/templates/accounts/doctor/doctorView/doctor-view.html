@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+{% include 'accounts/doctor/doctorView/row1.html' %}
+<br>
+{% include 'accounts/doctor/doctorView/row2.html' %}
+<br>
+{% include 'accounts/doctor/doctorView/row3.html' %}
+<br>
+<a class="btn btn-primary" href="{% url 'doctor_dash' %}" style="float:right">GoBack</a><br><br>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+{% include 'accounts/footer.html' %}
+{% endblock %}

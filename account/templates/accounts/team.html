@@ -1,0 +1,189 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+     }
+
+    html {
+       box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+       box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+
+</head>
+<body>
+{% include 'accounts/navbar.html' %}
+<br>
+<div class="about-section">
+  <h1>Team Members</h1>
+  <p></p>
+  <p></p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/BhagawanKoirala.jpg'  %}" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Dr.Bhagwan Koirala</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Bhagawan Koirala MD, FACC is a Cardiothoracic surgeon, professor and Social worker.
+          He is best known for pioneering Open-heart surgery in Nepal, and for starting an
+          operational cardiac care for the public.</p>
+        <p>bhagwankoirala@gmail.com</p>
+        <p><button class="button">9860955673</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/Dr.-Anuj-Parajuli.jpg'  %}" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Dr.Anju Parajuli</h2>
+        <p class="title">Director</p>
+        <p>After completing his medical schools, he did his Masters in Surgery (MS) from Kathmandu Medical College & Teaching Hospital (Kathmandu University). He has completed one year fellowship training in Colon and Rectum Surgery from Asan Medical Center, Seoul, South Korea and Tokyo Metropolitan Komagome Hospital, Tokyo, Japan.
+          He specializes in the treatment of wide range of General surgery diseases.</p>
+        <p>anujparajuli@gmail.com.com</p>
+        <p><button class="button">9860055673</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/SR-Pandey.jpeg'  %}" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Dr.Sanjay Raj Thapa</h2>
+        <p class="title">Allergist/Immunologist</p>
+        <p>After completing his medical schools, he did his Masters in Surgery (MS) from Kathmandu Medical College & Teaching Hospital (Kathmandu University). He has completed one year fellowship training in Colon and Rectum Surgery from Asan Medical Center, Seoul, South Korea and Tokyo Metropolitan Komagome Hospital, Tokyo, Japan.
+          He specializes in the treatment of wide range of General surgery diseases.</p>
+        <p>anujparajuli@gmail.com.com</p>
+        <p><button class="button">9860055673</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/anisha.jpg'  %}" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Dr.Anisha Basnet</h2>
+        <p class="title">Anesthesiologist</p>
+        <p>After completing his medical schools, he did his Masters in Surgery (MS) from Kathmandu Medical College & Teaching Hospital (Kathmandu University). He has completed one year fellowship training in Colon and Rectum Surgery from Asan Medical Center, Seoul, South Korea and Tokyo Metropolitan Komagome Hospital, Tokyo, Japan.
+          He specializes in the treatment of wide range of General surgery diseases.</p>
+        <p>anujparajuli@gmail.com.com</p>
+        <p><button class="button">9860055603</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/pawan.jpg'  %}" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Dr.Pawan Sharma</h2>
+        <p class="title">Anesthesiologist</p>
+        <p>After completing his medical schools, he did his Masters in Surgery (MS) from Kathmandu Medical College & Teaching Hospital (Kathmandu University). He has completed one year fellowship training in Colon and Rectum Surgery from Asan Medical Center, Seoul, South Korea and Tokyo Metropolitan Komagome Hospital, Tokyo, Japan.
+          He specializes in the treatment of wide range of General surgery diseases.</p>
+        <p>anujparajuli@gmail.com.com</p>
+        <p><button class="button">9860055673</button></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static '/images/TvuM20_jtyaFmS.jpg'  %}" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Dr.Jebina Lama</h2>
+        <p class="title">Dermatologist</p>
+        <p>Working as a Dermatology /Venerology ad Aesthetic Laser Surgeon  Since February 2015 till now at Norvic I
+          nternational Hospital.Ami-Applied Anatomy Cadover, Workshop Singapore General Hospital, Singapore.
+          Fellowship in Aesthetic Dermatology and Demato-Laser Surgery,Mahidol University,Thailand.MD- Sichuan University,China.
+          Medical Education from Allergan Appointed as a Trainer for Facial Injectebles.</p>
+        <p>jebina@gmail.com</p>
+        <p><button class="button">9865445672</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a class="btn btn-primary" href="{% url 'home' %}" style="float:right">GoBack</a><br><br>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+
+{% include 'accounts/footer.html' %}
+
+</body>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>

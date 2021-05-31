@@ -1,0 +1,43 @@
+{% load static %}
+<div class="row">
+  <div class="col">
+    <div class="col-md">
+      <div class="card card-body" style="background-color:#3b453e;">
+        <a class="btn btn-info btn-sm btn-block" href="{% url 'createPatient' %}">Create Patient</a>
+        <table class="table table-sm" style="color:white">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>BloodGroup</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Status</th>
+            <th>Doctor</th>
+            <th>Created_At</th>
+            <th>Update</th>
+            <th>Delete</th>
+<!--            <th>Appoint</th>-->
+            <th>View</th>
+          </tr>
+          {% for i in patient %}
+          <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.bloodGroup}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.status}}</td>
+            <td>{{i.assignedDoctor}}</td>
+            <td>{{i.Created_at}}</td>
+            <td><a class="btn btn-info btn-sm" href="{% url 'updatePatient' i.id %}">Update</a></td>
+            <td><a class="btn btn-danger btn-sm" href="{% url 'delPatient' i.id %}">Delete</a></td>
+<!--            <td><a class="btn btn-warning btn-sm" href="{% url 'appointPatient' i.id %}">Appoint</a></td>-->
+            <td><a class="btn btn-success btn-sm" href="{% url 'patient_view' i.id %}">View</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>

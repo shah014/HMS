@@ -1,0 +1,13 @@
+{% load static %}
+<h3 style="color:red"><marquee direction="left">Welcome to Achham District Hospital!!</marquee></h3>
+<section class="general-area-home">
+  <img src="{% static '/images/home.jpg' %}" alt="image not found" style="width:60%;height:400px;margin-left:240px"><br><br>
+  <div class="row" id="row1"></div>
+  <div class="row">
+    <div class="col">
+      <p class="text-center">This website allows the you to book an appointment with the respective
+        doctor whom he want to consult, you can view the old appointments and enjoy many services provided
+        by hospital.<a data-bs-hover-animate="flash" href="{% url 'about_us' %}">For more details..</a></p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+<br>
+<h4>Update Customer Form</h4>
+<div class="container-fluid" style="align:center">
+  <div class="col-md-5">
+    <div class="card card-body" style="background-color:#33FF57 ;color:white">
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+        <input class="btn btn-info" type="submit" style="margin-left:360px" name="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<a class="btn btn-primary" href="{% url 'patient_dash' %}" style="float:right">GoBack</a><br><br>
+{% include 'accounts/footer.html' %}
+{% endblock %}

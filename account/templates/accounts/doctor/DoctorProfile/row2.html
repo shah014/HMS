@@ -1,0 +1,34 @@
+{% load static %}
+<div class="row">
+  <div class="col">
+    <div class="col-md">
+      <div class="card card-body" style="background-color:#3b453e;">
+        <table class="table table-sm" style="color:white">
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>BloodGroup</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Created_At</th>
+            <th>Symptoms</th>
+            <th>Prescribe</th>
+          </tr>
+          {% for i in appointment %}
+          <tr>
+            <td>{{i.patient.name}}</td>
+            <td>{{i.patient.age}}</td>
+            <td>{{i.patient.bloodGroup}}</td>
+            <td>{{i.patient.email}}</td>
+            <td>{{i.patient.contact}}</td>
+            <td>{{i.patient.Created_at}}</td>
+            <td>{{i.patient.symptoms}}</td>
+            <td><a class="btn btn-info btn-sm" href="{% url 'prescribe' i.id %}">Prescribe</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>

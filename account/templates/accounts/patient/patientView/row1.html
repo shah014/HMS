@@ -1,0 +1,48 @@
+{% load static %}
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-success text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Hello..<i style="color:red">{{patient.name}},</i></h5>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-outline-danger  btn-sm btn-block" style="color:white"
+                       href="{% url 'updatePatient' patient.id %}">Update {{patient.name}} </a>
+                    <a class="btn btn-outline-danger  btn-sm btn-block" style="color:white"
+                       href="{% url 'appointPatient' patient.id %}">Appoint {{patient.name}} </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-info text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Appointment Date</h5>
+                </div>
+                {% for i in appointment %}
+                <div class="card-body">
+                    <h5 class="card-title">{{i.appointDate}}</h5>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-danger text-white mb-3">
+                <div class="card-body">
+                    <img class="profile-pic" src="{{patient.profile_pic.url}}" width="100px" height="80px"><br><br>
+                    <h5 class="card-title"><i>{{patient.email}}</i></h5>
+                    <h5 class="card-title"><i>{{patient.contact}}</i></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

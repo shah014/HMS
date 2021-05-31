@@ -1,0 +1,26 @@
+{% load static %}
+<style>
+  .hello-msg{
+  font-size: 10px;
+  color: #fff;
+  margin-right:30px;
+  }
+</style>
+
+
+<nav class="navbar navbar-dark navbar-expand-md ticky-top bg-dark">
+  <div class="container-fluid"><img src="https://previews.123rf.com/images/flyingprogresive/flyingprogresive1412/flyingprogresive141200054/34517171-natural-human-body-spinal-vector-logo-design.jpg" width="70px" height="45px" alt="10px"><a class="navbar-brand text-center" href="#" style="margin: 0px 0px;color:red;" >Achham District Hospital</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="nav navbar-nav text-light ml-auto">
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'about_us' %}">ABOUT</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'team' %}">TEAM</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'contact_us' %}">CONTACT</a></li>
+<!--        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'register' %}">CREATE ACCOUNT</a></li>-->
+<!--          <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login' %}">LOGIN</a></li>-->
+      </ul>
+    </div>
+  </div>
+  <span class="hello-msg">Hello,{{request.user}}</span>
+  <span><a href="{% url 'logout' %}">Logout</a></span>
+</nav>

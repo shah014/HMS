@@ -1,0 +1,52 @@
+{% load static %}
+<br>
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-info text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Add Doctor</h5>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-warning" href="{% url 'createDoctor' %}">Add Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-danger text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Doctor's Schedule</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <ul>
+                            <li>Sun/Tue: Dr.Bhagwan Koirala </li>
+                            <li>Mon/Wed: Dr. Jebina Lama    </li>
+                            <li>Tue/fri: Dr.Sanjay Thapa    </li>
+                            <li>Wed/Sun: Dr. Anisha Basnet  </li>
+                            <li>Thu/Mon: Dr. Anuj Parajuli  </li>
+                            <li>Fri/Tue: Dr. Hemant Lama    </li>
+                        </ul>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-success text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Total Doctors</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{total_doctor}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

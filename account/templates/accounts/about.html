@@ -1,0 +1,45 @@
+{% include 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <img src="{% static '/images/about1.jpg' %}" alt="image not found" style="width:100%;height:700px">
+
+    <p class="text-justify" id="about-p">
+    The Achham District Hospital is a 28-bed hospital. Dr Manoj Bista, acting medical superintendent at
+    the hospital, admitted that patients have been facing difficulties because of the hospital’s poor
+    infrastructures. “The hospital was roofed with galvanized zinc sheets four decades ago. The sheets are
+    old and have not been changed till date,” said Bista. “The gynaecological ward, emergency ward and OPD
+    section get flooded after it rains.The hospital has not been able to provide effective health services
+    due to its poor infrastructure, locals complain. “We have requested the concerned authorities to repair
+    the hospital’s old infrastructures, but they have not paid any heed,” said Dr Bista. The hospital has no
+    space for conducting post mortem. It does not even get round the electricity service, said health workers.
+    Achham District Hospital was declared one of the best hospitals for effective service delivery in the past.
+    However, the hospital now lacks basic facilities, medicines and equipments.
+    </p><br>
+</div>
+
+<h2 style="color:green"><u>Inside The Hospital</u></h2>
+<div class="container">
+    <img src="{% static '/images/about2.jpg' %}" alt="image not found">
+
+    <p>
+        Although the current health workers are doing their best at the hospital, but somewhere there is still
+        lack of sufficient doctors and health equipments as well as the technicians to operate them. So, being
+        the district hospital and lacking such resources is a serious subject.So, district committee should take
+        the responsible steps to overcome it. Achham District Hospital delivers low-cost, high-quality care to more than 100,000
+        patients a year from Achham and its six surrounding districts, more than eight times its original capacity.
+        The hospital has two operating theaters, one for each of the only two practicing surgeons in western Nepal,
+        Dr. Pawan Agrawal and Dr. Bikash Gauchan (who also serves as Bayalpata’s Healthcare Director).It
+        also features the sole dental office in the region, led by dentist and oral surgeon Dr. Rekha Gauchan and serving
+        a population of one million. Sharon Davis Design introduced rammed earth as a locally available material and low-tech
+        construction method that minimized the cost-prohibitive transportation of building materials in this mountainous region.
+        Soil from the site was mixed with a 6% cement content to stabilize the earth for better durability and seismic resistance.
+        Reusable, plastic lock-in-place formwork facilitated faster construction and the employment of unskilled local labor,
+        while local stone was used for foundations, pathways and retaining walls. Built-in furniture, exterior doors, and
+        louvers were fabricated from local Sal wood.
+    </p>
+</div>
+<a class="btn btn-primary" href="{% url 'home' %}" style="float:right">GoBack</a><br><br>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+{% endblock %}
+{% include 'accounts/footer.html' %}

@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<div class="container" style="background-color:#ff9999;width:300px;height:100px">
+    <p style="color:white;margin-left:50px">Do you want to delete '{{name}}' ?</p>
+    <form action="{% url 'delDoctor' doctor.id  %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="Confirm" style="float:right;background-color:red">
+        <a class= "btn btn-warning btn-sm" style="float:left" href="{% url 'doctor_dash' %}">Cancel</a>
+    </form>
+</div>
+<br>
+{% include 'accounts/footer.html' %}
+{%  endblock %}

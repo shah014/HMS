@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prescription</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="{% static '/css/contact.css' %}">
+</head>
+<body>
+{% include 'accounts/navbar.html' %}
+<br>
+<div class="container contact-form">
+  <div class="contact-image">
+    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+  </div>
+  <form method="POST", action="{% url 'prescribe' appointment.id %}">
+    {% csrf_token %}
+    <h3 style="color:green">Prescribe Patient: {{appointment.patient.name}}</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="email" class="form-control" placeholder="Your Email" value="" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="to_email" class="form-control" placeholder="Patient Email" value="{{appointment.patient.email}}" />
+        </div>
+        <div class="form-group">
+          <input type="text" name="number" class="form-control" placeholder="Your Contact" value="" />
+        </div>
+        <div class="form-group">
+          <input type="submit" name="submit" style="background-color:orange" class="btnContact" value="Send Message" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <textarea name="message" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<a class="btn btn-primary" href="{% url 'home' %}" style="float:right">GoBack</a><br><br>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+
+{% include 'accounts/footer.html' %}
+
+</body>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>

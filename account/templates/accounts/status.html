@@ -1,0 +1,45 @@
+{% load static %}
+<br>
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-success text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Total Patients</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{total_patient}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-info text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Total Doctors</h5>
+                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{total_doctor}}</h5>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-danger text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white"> Appointments Pending </h5>
+                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{appointment_pending}}</h5>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

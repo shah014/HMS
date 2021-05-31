@@ -1,0 +1,12 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+{% include 'accounts/patient/patientView/row1.html' %}
+<br>
+{% include 'accounts/patient/patientView/row2.html' %}
+<br>
+{% include 'accounts/patient/patientView/row3.html' %}
+<br>
+<br>
+<a class="btn btn-primary" href="{% url 'patient_dash' %}" style="float:right">GoBack</a><br><br>
+{% include 'accounts/footer.html' %}
+{% endblock %}

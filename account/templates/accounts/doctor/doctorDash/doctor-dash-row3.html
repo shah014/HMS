@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body" style="background-color:#3b453e">
+            <table class="table table-sm" style="color:white">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                    <th>View</th>
+                </tr>
+                {% for i in doctor %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.department}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.contact}}</td>
+                    <td><a class="btn btn-info btn-sm" href="{% url 'updateDoctor' i.id %}">Update</a></td>
+                    <td><a class="btn btn-danger btn-sm" href="{% url 'delDoctor' i.id %}">Remove</a></td>
+                    <td><a class="btn btn-warning btn-sm" href="{% url 'doctor_view' i.id %}">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
