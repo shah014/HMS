@@ -26,7 +26,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['anilHMS.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -75,18 +75,24 @@ WSGI_APPLICATION = 'HopitalManagementIW.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+# # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': NAME,
-        'USER': USER,
-        'PASSWORD': PASSWORD,
-        'HOST': HOST,
-        'PORT': PORT
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': NAME,
+#         'USER': USER,
+#         'PASSWORD': PASSWORD,
+#         'HOST': HOST,
+#         'PORT': PORT
+#     }
+# }
 
 
 # Password validation
