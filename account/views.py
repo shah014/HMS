@@ -128,7 +128,7 @@ def contact_us(request):
 
         sub = f'Message from {name}[{email}]'
         from_email = 'admin@admin.com'
-        to = ['anilshah98600@gmail.com']
+        to = ['anilshah984353@gmail.com']
         message = message
 
         send_mail(subject=sub, message=message, from_email=from_email, recipient_list=to, fail_silently=True)
