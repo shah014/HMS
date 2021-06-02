@@ -35,7 +35,7 @@ def registerPage(request):
                 group = Group.objects.get(name='doctor')
                 user.groups.add(group)
                 Doctor.objects.create(
-                user=user
+                    user=user
                 )
             messages.success(request, 'Account Created Successfully for ' + username)
             return redirect('login')
@@ -43,7 +43,6 @@ def registerPage(request):
             for msg in form.error_messages:
                 messages.error(request, f"{msg}: {form.error_messages[msg]}")
                 print(msg)
-
     context = {'form': form}
     return render(request, 'accounts/RegLogin/register.html', context)
 
