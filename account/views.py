@@ -187,7 +187,9 @@ def patient_view(request, pk):
 @allowed_users(allowed_roles=['admin', 'doctor'])
 def doctor_view(request, pk):
     doctor = Doctor.objects.get(id=pk)
-    context = {'doctor': doctor}
+    appointment = doctor.appointment_set.all()
+    total_appointment = appointment.count()
+    context = {'doctor': doctor, 'total_appointment': total_appointment}
     return render(request, 'accounts/doctor/doctorView/doctor-view.html', context)
 
 
