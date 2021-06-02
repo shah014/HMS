@@ -127,7 +127,7 @@ def contact_us(request):
         message = request.POST.get('message')
 
         sub = f'Message from {name}[{email}]'
-        from_email = 'anilshah65156@gmail.com'
+        from_email = 'admin@admin.com'
         to = ['anilshah98600@gmail.com']
         message = message
 
