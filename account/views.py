@@ -21,31 +21,29 @@ def registerPage(request):
 
     if request.method == "POST":
         form = CreateUserForm(request.POST, request.FILES)
-        form.is_valid()
-        user = form.save()
-        username = form.cleaned_data.get('username')
-        # group = Group.objects.get(name='patient')
-        # user.groups.add(group)
-        # Patient.objects.create(
-        #     user=user
-        # )
-
-        user_type = form.cleaned_data.get('user_type')
-        if user_type == 'P':
-            group = Group.objects.get(name='patient')
-            user.groups.add(group)
-            Patient.objects.create(
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            user_type = form.cleaned_data.get('user_type')
+            if user_type == 'P':
+                group = Group.objects.get(name='patient')
+                user.groups.add(group)
+                Patient.objects.create(
+                    user=user
+                )
+            if user_type == 'D':
+                group = Group.objects.get(name='doctor')
+                user.groups.add(group)
+                Doctor.objects.create(
                 user=user
-            )
+                )
+            messages.success(request, 'Account Created Successfully for ' + username)
+            return redirect('login')
+        else:
+            for msg in form.error_messages:
+                messages.error(request, f"{msg}: {form.error_messages[msg]}")
+                print(msg)
 
-        if user_type == 'D':
-            group = Group.objects.get(name='doctor')
-            user.groups.add(group)
-            Doctor.objects.create(
-                user=user
-            )
-        messages.success(request, 'Account Created Successfully for ' + username)
-        return redirect('login')
     context = {'form': form}
     return render(request, 'accounts/RegLogin/register.html', context)
 
