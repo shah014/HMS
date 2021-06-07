@@ -41,6 +41,12 @@ urlpatterns = [
 
     path('account/', views.accountSettings, name='account'),
     path('doctor_account/', views.doctorSettings, name='doctor_account'),
+    
+    path('beds/', views.availableBed, name="bed"),
+    path('hospital_bed/', views.hospitalBedDetails, name="hospital_bed"),
+    path('update_bed/<str:pk>/', views.updateBed, name="update_bed"),
+    path('delete_hospital/<str:pk>/', views.deleteHospital, name="delete_hospital"),
+    path('view_bed', views.viewBed, name="view_bed"),
 
 
     path('reset_password/',
