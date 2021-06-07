@@ -58,3 +58,17 @@ class Appointment(models.Model):
 
     def __str__(self):
         return str(self.patient) + " " + "has appointment with Dr."+" " + str(self.doctor)
+ 
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    province = models.PositiveIntegerField()
+    ICU = models.PositiveIntegerField()
+    HDU = models.PositiveIntegerField()
+    ventilator = models.PositiveIntegerField()
+    email = models.EmailField(max_length=100)
+    contact = models.CharField(max_length=20)
+
+    def __str__(self):
+        return str(self.name)
