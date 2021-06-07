@@ -435,6 +435,3 @@ def viewBed(request):
     hospital = myFilter.qs
     context = {'hospital': hospital, 'myFilter': myFilter}
     return render(request, 'accounts/patient/patientViewBed/row1.html', context)
-
-
-
