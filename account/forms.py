@@ -48,3 +48,9 @@ class AppointForm(ModelForm):
     class Meta:
         model = Appointment
         fields = '__all__'
+  
+
+class AvailableBed(ModelForm):
+    class Meta:
+        model = Hospital
+        fields = '__all__'
