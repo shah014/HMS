@@ -1,0 +1,29 @@
+{% load static %}
+<br>
+<div class="row">
+    <div class="col-4">
+        <div class="col-md">
+            <div class="card text-center bg-info text-white mb-3">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white">Add Hospital</h5>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-outline-danger  btn-sm btn-block" style="color:white" href="{% url 'bed' %}">Add</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center bg-danger text-white mb-3" style="float:right;width:400px">
+                <div class="card-header">
+                    <h5 class="card-title" style="color:white"> Total Available Beds </h5>
+                </div>
+                <div class="card-body">
+                    <h5 style="color:blue">Please check out !!</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
