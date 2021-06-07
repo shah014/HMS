@@ -1,1 +1,35 @@
-
+{% load static %}
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card card-body" style="background-color:#3b453e;">
+                <a class="btn btn-info btn-sm btn-block" href="#">Hospital</a>
+                <table class="table table-sm" style="color:white">
+                    <tr>
+                        <th>Name</th>
+                        <th>District</th>
+                        <th>Province</th>
+                        <th>ICU</th>
+                        <th>HDU</th>
+                        <th>Ventilator</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                    </tr>
+                    {% for i in hospital %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.district}}</td>
+                        <td>{{i.province}}</td>
+                        <td>{{i.ICU}}</td>
+                        <td>{{i.HDU}}</td>
+                        <td>{{i.ventilator}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.contact}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
