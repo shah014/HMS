@@ -26,3 +26,10 @@ class Doctorfilter(django_filters.FilterSet):
 #         model = Appointment
 #         fileds = '__all__'
 #         exclude = ['doctor']
+
+
+class AvailableBedFilter(django_filters.FilterSet):
+    class Meta:
+        model = Hospital
+        fields = '__all__'
+        exclude = ['ICU', 'HDU', 'ventilator', 'email', 'contact']
