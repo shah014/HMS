@@ -31,9 +31,15 @@
         <p>
           <a href="{% url 'contact_us' %}">Contact</a>
         </p>
+        {% if request.user.is_authenticated %}
         <p>
           <a href="{% url 'hospital_bed' %}">Hospital Bed, ICU</a>
         </p>
+        {% else %}
+        <p>
+          <a href="{% url 'view_bed' %}">Hospital Bed, ICU</a>
+        </p>
+        {% endif %}
         <p>
           <a href="{% url 'patient_dash' %}">Patient</a>
         </p>
