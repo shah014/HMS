@@ -51,5 +51,7 @@
     <p><a href="https://www.mohp.gov.np/eng/audio/National_Anthem.mp3" target="_blank" rel="noopener
          noreferrer"><img src="https://i.pinimg.com/originals/a3/5c/c0/a35cc08f30e83b005b945b1f83f0ea37.gif"
                           width="60%" height="60%" /></a></p></div>
+  {% if request.user.is_authenticated %}
   <span><a href="{% url 'logout' %}">Logout</a></span>
+  {% endif %}
 </nav>
