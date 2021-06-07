@@ -15,7 +15,7 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 from django.contrib.auth.models import Group
 
 
-@unauthenticated_user
+# @unauthenticated_user
 def registerPage(request):
     form = CreateUserForm()
 
@@ -47,7 +47,7 @@ def registerPage(request):
     return render(request, 'accounts/RegLogin/register.html', context)
 
 
-@unauthenticated_user
+# @unauthenticated_user
 def loginPage(request):
 
     if request.method == 'POST':
@@ -68,7 +68,7 @@ def loginPage(request):
 
 def logoutPage(request):
     logout(request)
-    return redirect('login')
+    return redirect('homeBeforeLogin')
 
 
 @login_required(login_url='login')
@@ -86,6 +86,20 @@ def home(request):
                'total_patient': total_patient, 'total_doctor': total_doctor,
                'appointment_pending': appointment_pending}
     return render(request, 'accounts/dashboard.html', context)
+
+
+def homeBeforeLogin(request):
+    patient = Patient.objects.all()
+    doctor = Doctor.objects.all()
+    appointment = Appointment.objects.all()
+    total_patient = patient.count()
+    total_doctor = doctor.count()
+    appointment_pending = appointment.filter(status="pending").count()
+
+    context = {'patient': patient, 'doctor': doctor, 'appointment': appointment,
+               'total_patient': total_patient, 'total_doctor': total_doctor,
+               'appointment_pending': appointment_pending}
+    return render(request, 'accounts/dashboard1.html', context)
 
 
 # @login_required(login_url='login')
@@ -113,7 +127,8 @@ def userPage(request):
     if group == 'patient':
         patient = request.user.patient
         appointment = patient.appointment_set.all()
-        context = {'appointment': appointment}
+        hospital = Hospital.objects.all()
+        context = {'appointment': appointment, 'hospital':hospital}
         return render(request, 'accounts/patient/PatientProfile/user.html', context)
 
 
@@ -127,12 +142,12 @@ def contact_us(request):
         message = request.POST.get('message')
 
         sub = f'Message from {name}[{email}]'
-        from_email = 'admin@admin.com'
+        from_email = 'anilshah65156@gmail.com'
         to = ['anilshah984353@gmail.com']
         message = message
 
         send_mail(subject=sub, message=message, from_email=from_email, recipient_list=to, fail_silently=True)
-        return redirect('home')
+        return redirect('homeBeforeLogin')
     return render(request, 'accounts/contact.html')
 
 
@@ -366,3 +381,60 @@ def prescribeMe(request, pk):
         send_mail(subject=sub, message=message, from_email=from_email, recipient_list=to, fail_silently=True)
         return redirect('home')
     return render(request, 'accounts/doctor/prescribeForm/prescribe.html', context)
+
+
+@allowed_users(allowed_roles=['admin'])
+def hospitalBedDetails(request):
+    hospital = Hospital.objects.all()
+    myFilter = AvailableBedFilter(request.GET, queryset=hospital)
+    hospital = myFilter.qs
+    context = {'hospital': hospital, 'myFilter': myFilter}
+    return render(request, 'accounts/availableBed/available_dash.html', context)
+
+
+@allowed_users(allowed_roles=['admin'])
+def availableBed(request):
+    form = AvailableBed()
+    if request.method == "POST":
+        form = AvailableBed(request.POST)
+        form.is_valid()
+        form.save()
+        return redirect('hospital_bed')
+    context = {'form': form}
+    return render(request, 'accounts/availableBed/bed.html', context)
+
+
+@allowed_users(allowed_roles=['admin'])
+def updateBed(request, pk):
+    hospital = Hospital.objects.get(id=pk)
+    form = AvailableBed(instance=hospital)
+
+    if request.method == "POST":
+        form = AvailableBed(request.POST, instance=hospital)
+        form.is_valid()
+        form.save()
+        return redirect('hospital_bed')
+    context = {'hospital': hospital, 'form': form}
+    return render(request, 'accounts/availableBed/bed.html', context)
+
+
+@allowed_users(allowed_roles=['admin'])
+def deleteHospital(request, pk):
+    hospital = Hospital.objects.get(id=pk)
+
+    if request.method == "POST":
+        hospital.delete()
+        return redirect('hospital_bed')
+    context = {'hospital': hospital}
+    return render(request, 'accounts/availableBed/delete.html', context)
+
+
+def viewBed(request):
+    hospital = Hospital.objects.all()
+    myFilter = AvailableBedFilter(request.GET, queryset=hospital)
+    hospital = myFilter.qs
+    context = {'hospital': hospital, 'myFilter': myFilter}
+    return render(request, 'accounts/patient/patientViewBed/row1.html', context)
+
+
+
